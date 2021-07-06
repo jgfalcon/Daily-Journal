@@ -1,0 +1,103 @@
+<%- include("partials/header") -%>
+
+  <% if(message.length> 0) { %>
+    <div class="alert alert-success" role="alert">
+      <%= message %>
+    </div>
+    <% } %>
+      <div class="home-box">
+        <h1>Home</h1>
+      </div>
+
+      <div class="compose"><a class="highlight" href="/compose">What's on your mind?</a></div>
+
+      <% posts.forEach(post=> { %>
+
+        <div class="blog-box">
+
+          <div class="dropdown" id="dd-content">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span aria-hidden="true"><i class="glyphicon glyphicon-option-horizontal"></i></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+              <li>
+                <button type="button" class="forms_btn" data-toggle="modal" data-target="#delModal<%= post.id %>">
+                  Delete Post
+                </button>
+              </li>
+              <li>
+                <button type="button" class="forms_btn" data-toggle="modal" data-target="#myModal<%= post.id %>">
+                  Edit Post
+                </button>
+              </li>
+
+            </ul>
+          </div>
+
+
+          <h1>
+            <%= post.title %>
+          </h1>
+          <p>
+            <%= post.content.substring(0,500) + " ..." %>
+              <a class="readMore" href="/posts/<%= post.id %>">Read more</a>
+          </p>
+          <div class="line"></div>
+        </div>
+
+        <div class="modal fade" id="delModal<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Delete this post? <%= post.title %>
+                </h4>
+              </div>
+              <div class="modal-body">
+                <form action="/delete" method="post">
+                  <input type="hidden" name="postId" value="<%= post.id %>"></input>
+
+              </div>
+
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="myModal<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Post</h4>
+              </div>
+              <div class="modal-body">
+                <form action="/update" method="post" class="update">
+                  <input type="hidden" name="postId" value="<%= post.id %>"></input>
+                  <div class="form-group">
+                    <label for="">Title</label>
+                    <input class="form-control" value="<%= post.title %>" type="text" name="postTitle"></input>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Message</label>
+                    <textarea class="form-control" name="postBody" cols="30" rows="10"><%= post.content %></textarea>
+                  </div>
+              </div>
+
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <% }); %>
+
+<%- include("partials/footer") -%>

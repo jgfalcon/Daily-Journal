@@ -1,0 +1,152 @@
+body {
+    min-height: 100vh;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+.footer-padding {
+	padding-top: 75px;
+}
+
+.footer {
+	text-align: center;
+	background-color: #1abc9c;
+    position: relative;
+    top: 400px;
+}
+
+.footer p {
+    padding: 20px;
+	font-size: 14px;
+    color: #fff;
+}
+
+a.highlight:link, a.highlight:visited {
+    background-color: rgb(168, 167, 167);
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 20px;
+    
+}
+
+a.highlight:hover, a.highlight:active {
+    background-color: cadetblue;
+}
+.compose {
+    text-align: center;
+    width:  60%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.home-box {
+    padding: 3px 10px;
+    margin-bottom: 20px;
+}
+
+.blog-box {
+    padding: 3px 10px;
+    background-color: rgb(212, 209, 209);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.line {
+    border-bottom: 1px solid rgb(29, 28, 28);
+    margin-bottom: 20px;
+}
+
+a.readMore:link {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: black;
+    /* word-break: break-all; */
+    word-wrap: break-word;
+    background-color: transparent;
+    border: none;
+    white-space: pre-wrap;
+    word-break: normal;
+}
+
+/* Changing the margin of dialog */
+.modal-dialog {
+    margin: 5px auto;
+}
+
+/* removing extra padding from the body */
+.modal-body {
+    position: relative;
+    padding: 0 15px;
+}
+
+/* Add padding to your footer */
+.modal .modal-footer {
+    border-top: none;
+    padding: 10px;
+}
+
+/* change height of textarea */
+textarea.form-control {
+    height: 100px !important;
+}
+
+.dropdown{
+    margin: 0;
+}
+
+#dd-content{
+    text-align: right;
+}
+#dLabel{
+    margin-top: 5px;
+    background-color: transparent;
+    border: none;
+}
+#dLabel:hover{
+    border-radius: 45%;
+    background-color: cadetblue;
+}
+#dd-content>ul>li {
+    margin: 5px;
+}
+.forms_btn{
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown>ul>li:hover{
+    background-color: rgb(148, 176, 177);
+}
+
+p, pre{
+    font-size: 1.2em;
+}
+
